@@ -26,14 +26,18 @@ export class FacturaPage implements OnInit {
     console.log('Datos recibidos:', this.datos);
   }
 
-  
-  onClick(){
+
+  onClick() {
     this.carritoSVC.clearCart();
     this.DatosSVC.borrarDatos();
-    this.router.navigate(['/home'])
+
+
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+    }, 1000);
   }
 
-  obtenerDatos(){
+  obtenerDatos() {
     this.datos = this.DatosSVC.obtenerDatos();
   }
 

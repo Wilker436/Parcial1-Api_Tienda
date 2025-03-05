@@ -28,10 +28,10 @@
       <ion-item *ngFor="let product of products">
         <ion-label>
           <h2>{{ product.title }}</h2>
-          <p>{{ product.cantidad }} {{ product.cantidad > 1 ? 'unidades' : 'unidad' }} {{ product.price | currency }}
-          </p>
+          <p>{{ product.cantidad }} {{ product.cantidad > 1 ? 'unidades' : 'unidad' }} </p>
+          <p>{{ product.price | currency }}</p>
         </ion-label>
-        <h3>$ {{ (product.price * product.cantidad) | currency }}</h3>
+        <h3>$ {{ (product.price * product.cantidad)}}</h3>
       </ion-item>
 
 
@@ -76,45 +76,46 @@
               <ion-label position="floating">Nombre</ion-label>
               <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>
             </ion-item>
-          
+
             <ion-item>
               <ion-label position="floating">Apellido</ion-label>
               <ion-input type="text" [(ngModel)]="apellido" name="apellido" required></ion-input>
             </ion-item>
-          
+
             <ion-item>
               <ion-label position="floating">País</ion-label>
               <ion-input type="text" [(ngModel)]="pais" name="pais" required></ion-input>
             </ion-item>
-          
+
             <ion-item>
               <ion-label position="floating">Dirección</ion-label>
               <ion-input type="text" [(ngModel)]="direccion" name="direccion" required></ion-input>
             </ion-item>
-          
+
             <ion-item>
               <ion-label position="floating">Tarjeta de crédito</ion-label>
               <ion-input type="number" [(ngModel)]="creditCard" name="creditCard" required></ion-input>
             </ion-item>
-          
+
             <ion-item>
               <ion-label position="floating">CVC</ion-label>
               <ion-input type="number" [(ngModel)]="cvc" name="cvc" required></ion-input>
             </ion-item>
-          
+
             <ion-item>
               <ion-label>Fecha de vencimiento</ion-label>
-              <ion-datetime display-format="YYYY-MM-DD" [(ngModel)]="fechaDeVencimiento" name="fechaDeVencimiento"></ion-datetime>
+              <ion-datetime display-format="YYYY-MM-DD" [(ngModel)]="fechaDeVencimiento"
+                name="fechaDeVencimiento"></ion-datetime>
             </ion-item>
-          
+
             <ion-item>
               <ion-label position="floating">Email</ion-label>
               <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
             </ion-item>
-          
-            <ion-button expand="full" type="submit"  (click)="modal.dismiss()">Enviar</ion-button>
+
+            <ion-button expand="full" type="submit" (click)="modal.dismiss()">Enviar</ion-button>
           </form>
-          
+
 
         </ion-list>
       </ion-content>
