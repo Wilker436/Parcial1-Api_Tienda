@@ -53,6 +53,23 @@ export class HomePage implements OnInit {
     });
   }
 
+  slideData = [
+    {
+      img: "https://http2.mlstatic.com/D_NQ_842909-MLA82190792792_022025-OO.webp",
+      title: "Gratis",
+      description: "",
+    },
+    {
+      img: "https://http2.mlstatic.com/D_NQ_652080-MLA82822258505_032025-OO.webp",
+      title: "Tecnologia",
+      description: "",
+    },
+    {
+      img: "https://http2.mlstatic.com/D_NQ_787228-MLA82555315724_032025-OO.webp",
+      title: "Hogar",
+      description: "",
+    },
+  ]
   
 
 

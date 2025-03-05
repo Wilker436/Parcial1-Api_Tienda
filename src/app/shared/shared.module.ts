@@ -7,6 +7,7 @@ import { CardModule } from '../component/card-product/card-product.module';
 import { RouterModule } from '@angular/router';
 import { CarritoService } from '../services/carrito.service';{}
 import { ItemModule } from '../component/item/item.module';
+import { SlideeModule } from '../component/slider/slider.module';
 
 @NgModule({
   declarations: [],
@@ -22,7 +23,8 @@ import { ItemModule } from '../component/item/item.module';
     HeaderModule,
     CardModule,
     RouterModule,
-    ItemModule
+    ItemModule,
+    SlideeModule
   ],
   providers: [TiendaApiService, CarritoService]
 })
