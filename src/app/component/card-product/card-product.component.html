@@ -1,0 +1,64 @@
+<ion-card [ngClass]="param === 0 ? 'card1' : 'card2'">
+  <ion-grid>
+    
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+
+      
+
+      <div class="imageContainer">
+        <img [src]="product.image" alt="" class="img">
+      </div>
+
+      <ion-col size-lg="12" size-md="12" size-sm="8" size="12" class="s1s">
+        <div class="info-content">
+          <strong>{{product.title}}</strong>
+
+          @if (param === 1) {
+            <div class="description">{{product.description}}</div>
+          }
+
+          <p> Precio: {{product.price|currency}} $ </p>
+          <p>Calificación: {{ product.rating.rate }}</p>
+
+          <div class="stars">
+            <ng-container *ngFor="let star of getStars(product.rating.rate)">
+              <i [ngClass]="star"></i>
+            </ng-container>
+          </div>
+
+          @if (param === 0) {
+            <ion-button expand="block" fill="clear" shape="round" (click)="onClick()">
+              Mas detalles
+            </ion-button>
+          }@else {
+            <ion-input
+            type="number"
+            fill="solid"
+            label="Cantidad"
+            labelPlacement="floating"
+            helperText="Cantidad deseada"
+            errorText="Error"
+            [(ngModel)]="cantidad"
+            (ionChange)="validarCantidad()"
+            min="1"
+            ></ion-input>
+  
+            <ion-button expand="block" fill="clear" shape="round" (click)="addCart()">
+              Agregar al carrito
+            </ion-button>
+
+            <!-- <ion-button expand="block" fill="clear" shape="round" (click)=" mostarLocal()">
+              mostar carriot
+            </ion-button> -->
+
+          }
+
+
+        </div>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-card>

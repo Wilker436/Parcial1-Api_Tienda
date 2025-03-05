@@ -1,0 +1,57 @@
+
+<app-header (searchEvent)="getProducts(selectedCategory, $event)"></app-header>
+
+
+<ion-content class="content">
+
+
+    <img src="https://http2.mlstatic.com/D_NQ_842909-MLA82190792792_022025-OO.webp" alt="" class="imgBanner">
+
+
+
+  <div class="textContent">
+    <h1>Bienvenido a mercado libre</h1>
+    <h3>Lo mejor esta llegando</h3>
+  </div>
+
+  
+<div class="selectContainer">
+  <h1>Categorias: </h1>
+  <ion-list mode="ios">
+    <ion-item>
+        <ion-select (ionChange)="getProducts($event.detail.value, searchQuery)" aria-label="Categorias" interface="action-sheet" placeholder="Seleccionar">
+          <ion-select-option value="">Seleccionar</ion-select-option>
+          <ion-select-option value="men's clothing">Prendas Masculinas</ion-select-option>
+          <ion-select-option value="jewelery">Joyería</ion-select-option>
+          <ion-select-option value="electronics">Electrónica</ion-select-option>
+          <ion-select-option value="women's clothing">Prendas Femeninas</ion-select-option>
+        </ion-select>
+    </ion-item>
+  </ion-list>
+
+</div>
+
+
+
+
+  <ion-grid>
+    <ion-row class="card-content"> 
+
+
+      @for (product of products; track product.id) {
+
+        <ion-col size-lg="3" size-md="6" size-sm="12" size="12">
+          
+          <app-card-product [product]="product"/>
+  
+        </ion-col>
+
+
+      }
+
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+

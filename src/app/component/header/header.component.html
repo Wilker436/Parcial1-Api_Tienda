@@ -1,0 +1,38 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+
+    <div class="header-content">
+      @if (param === 1) {
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+      }
+
+      <img src="/assets/images/mercadolibre-logo.png" alt="Mercado Libre" class="logo" routerLink="/home">
+      @if (param === 0) {<span class="title">HOME</span>}@else if (param === 1){<span class="title">DETALLES</span>}
+
+    </div>
+
+    @if (param === 0) {
+
+    <div class="searchDiv">
+      <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar..." [debounce]="250" (ionInput)="onSearch()">
+      </ion-searchbar>
+
+    </div>
+
+    }
+
+
+
+
+    <ion-buttons slot="end" (click)="irAlcarrit()">
+      <div class="cart-container">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-badge>{{ num }}</ion-badge>
+      </div>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>

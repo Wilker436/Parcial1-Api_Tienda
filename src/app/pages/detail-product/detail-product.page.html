@@ -1,0 +1,20 @@
+<app-header [param]=1></app-header>
+
+<ion-content class="content">
+    
+
+
+    <div class="ion-padding card-content">
+
+        @if(product){
+            <div class="ion-text-center ion-padding-top">
+               
+                <app-card-product [product]="product" [param]=1/>
+            
+            </div>
+        }
+
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,97 @@
+ion-card {
+    min-height: 650px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card2 {
+    min-height: 300px !important;
+}
+
+
+
+.imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    & .img {
+        height: 300px;
+        padding-bottom: 20px;
+    }
+}
+
+.parent {
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.div2 {
+    grid-column: span 4 / span 4;
+    grid-row: span 4 / span 4;
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.div7 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 1;
+    grid-row-start: 1;
+
+
+}
+
+@media (max-width: 1024px) {
+    .div2 {
+        grid-column: span 5 / span 5;
+        grid-row: span 4 / span 4;
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+
+    .div7 {
+        grid-column: span 5 / span 5;
+        grid-row: span 2 / span 2;
+        grid-column-start: 1;
+        grid-row-start: 1;
+
+    }
+}
+
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+.stars {
+    background: linear-gradient(45deg, #CDA434, #E6BE55, #FFD700, #E6BE55, #CDA434);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+}
+
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    & .description {
+        padding: 1% 2% 1% 2%;
+        text-align: justify;
+    }
+
+    & strong {
+        font-weight: bold;
+        font-size: 19px
+    }
+
+    & p {
+        margin-top: 5px;
+        font-size: 20px;
+    }
+}
