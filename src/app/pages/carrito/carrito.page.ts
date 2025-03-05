@@ -3,7 +3,7 @@ import { CarritoService } from 'src/app/services/carrito.service';
 import { AnimationController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
-
+import { DatosCompraService } from 'src/app/services/datos-compra.service';
 
 @Component({
   selector: 'app-carrito',
@@ -22,6 +22,7 @@ export class CarritoPage implements OnInit {
     private animationCtrl: AnimationController,
     private toastController: ToastController,
     private router: Router,
+    private datosSVC: DatosCompraService
   ) { }
 
   ngOnInit() {
@@ -85,7 +86,8 @@ export class CarritoPage implements OnInit {
 
 
 
-  onSubmit() {
+
+  onSubmit(cantidad: number) {
     const datosFormulario = {
       nombre: this.nombre,
       apellido: this.apellido,
@@ -95,13 +97,16 @@ export class CarritoPage implements OnInit {
       cvc: this.cvc,
       fechaDeVencimiento: this.fechaDeVencimiento,
       email: this.email,
-      total: this.total
+      total: this.total,
+      cantidadP: cantidad
     };
 
     this.presentToast("top");
 
+    this.datosSVC.guardarDatos(datosFormulario);
+
     setTimeout(() => {
-      this.router.navigate(['/loadpage'], { state: { datos: datosFormulario } });
+      this.router.navigate(['/loadpage']);
     }, 1500);
 
   }

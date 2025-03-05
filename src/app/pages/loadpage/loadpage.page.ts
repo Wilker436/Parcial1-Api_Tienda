@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class LoadpagePage implements OnInit {
 
-  datos: any = null;
 
   constructor(private router: Router) { }
 
@@ -17,13 +16,9 @@ export class LoadpagePage implements OnInit {
 
   ngOnInit() {
 
-    const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras.state) {
-      this.datos = navigation.extras.state['datos']; 
-    }
 
     setTimeout(() => {
-      this.router.navigate(['/factura'], { state: { datos: this.datos } });
+      this.router.navigate(['/factura']);
     }, 3000);
 
     

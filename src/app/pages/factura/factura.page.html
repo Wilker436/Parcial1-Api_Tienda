@@ -1,8 +1,10 @@
 <div class="content">
   <div class="container">
-    <h2>Resumen de Datos</h2>
+    <ion-icon name="checkmark-done-circle-outline" class="icon rotate-scale-up"></ion-icon>
+    <h2>Transaccion exitosa</h2>
 
     <div class="info-container">
+      <h2>Resumen de datos</h2>
       <p><strong>Nombre:</strong> {{ datos?.nombre }}</p>
       <p><strong>Apellido:</strong> {{ datos?.apellido }}</p>
       <p><strong>País:</strong> {{ datos?.pais }}</p>
@@ -11,9 +13,10 @@
       <p><strong>CVC:</strong> {{ datos?.cvc }}</p>
       <p><strong>Fecha de Vencimiento:</strong> {{ datos?.fechaDeVencimiento }}</p>
       <p><strong>Email:</strong> {{ datos?.email }}</p>
+      <p><strong>Cantidad de productos:</strong> {{ datos?.cantidadP }}</p>
       <p><strong>Total:</strong> {{ datos?.total | currency }}</p>
     </div>
 
-    <ion-button (click)="onClick()" expand="block">Regresar</ion-button>
+    <ion-button (click)="onClick()" expand="block">Terminar</ion-button>
   </div>
 </div>

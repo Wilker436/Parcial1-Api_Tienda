@@ -71,7 +71,7 @@
             <h1>Datos personales</h1>
           </ion-item>
 
-          <form (ngSubmit)="onSubmit()">
+          <form (ngSubmit)="onSubmit(products.length)">
             <ion-item>
               <ion-label position="floating">Nombre</ion-label>
               <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarritoService } from 'src/app/services/carrito.service';
-
+import { DatosCompraService } from 'src/app/services/datos-compra.service';
 
 @Component({
   selector: 'app-factura',
@@ -11,28 +11,30 @@ import { CarritoService } from 'src/app/services/carrito.service';
 })
 export class FacturaPage implements OnInit {
 
-  datos: any = null;
+  datos: any = {};
 
   constructor(
     private router: Router,
-    private carritoSVC: CarritoService
+    private carritoSVC: CarritoService,
+    private DatosSVC: DatosCompraService,
   ) { }
 
   ngOnInit() {
-    const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras.state) {
-      this.datos = navigation.extras.state['datos']; 
-    }
-    
+
+    this.obtenerDatos();
 
     console.log('Datos recibidos:', this.datos);
   }
 
+  
   onClick(){
-    
     this.carritoSVC.clearCart();
+    this.DatosSVC.borrarDatos();
     this.router.navigate(['/home'])
+  }
 
+  obtenerDatos(){
+    this.datos = this.DatosSVC.obtenerDatos();
   }
 
 }
