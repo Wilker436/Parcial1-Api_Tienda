@@ -4,4 +4,16 @@ module.exports = {
   moduleNameMapper: {
     '^src/(.*)$': '<rootDir>/src/$1',
   },
+  reporters: [
+    'default',
+    [
+      'jest-html-reporter',
+      {
+        pageTitle: 'Test Report',
+        outputPath: 'test-report/report.html',
+        includeFailureMsg: true,
+        includeSuiteFailure: true
+      }
+    ]
+  ]
 };
