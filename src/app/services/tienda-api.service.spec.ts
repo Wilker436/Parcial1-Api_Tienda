@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { environment } from 'src/environments/environment'; // usa el base, no el .prod
+import { environment } from 'src/environments/environment';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TiendaApiService } from './tienda-api.service';
 
