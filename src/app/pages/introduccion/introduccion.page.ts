@@ -17,6 +17,7 @@ export class IntroduccionPage implements OnInit {
       this.router.navigate(['/home']);
     }, 3000);
 
+    /* no se, un cambio marika */
   }
 
 }
