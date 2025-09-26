@@ -41,7 +41,7 @@ jobs:
           path: coverage/
 
   build:
-    
+    needs: test-coverage
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -49,10 +49,10 @@ jobs:
         with:
           node-version: 22.18.0
       - run: npm ci
-      - run: npm run build -- --configuration production --no-errors
+      - run: npm run build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: angular-build
-          path: dist/
+          path: www/
