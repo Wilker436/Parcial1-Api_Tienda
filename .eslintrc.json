@@ -1,11 +1,18 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*", "coverage/**/*"],
+  "ignorePatterns": [
+    "projects/**/*",
+    "coverage/**/*"
+  ],
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": [
+        "*.ts"
+      ],
       "parserOptions": {
-        "project": ["tsconfig.json"],
+        "project": [
+          "tsconfig.json"
+        ],
         "createDefaultProgram": true
       },
       "extends": [
@@ -14,10 +21,21 @@
       ],
       "rules": {
         "@angular-eslint/prefer-standalone": "off",
+        "@angular-eslint/no-empty-lifecycle-method": [
+          "warn",
+          {
+            "allow": [
+              "ngOnInit"
+            ]
+          }
+        ],
         "@angular-eslint/component-class-suffix": [
           "error",
           {
-            "suffixes": ["Page", "Component"]
+            "suffixes": [
+              "Page",
+              "Component"
+            ]
           }
         ],
         "@angular-eslint/component-selector": [
@@ -39,8 +57,12 @@
       }
     },
     {
-      "files": ["*.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
       "rules": {}
     }
   ]

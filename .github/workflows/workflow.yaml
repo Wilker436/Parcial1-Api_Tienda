@@ -25,6 +25,6 @@ jobs:
         with:
           node-version: 22.18.0
       - run: npm ci
-      - run: npm test
+      - run: npm test:coverage
 
 
