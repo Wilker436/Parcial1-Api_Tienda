@@ -1,15 +1,16 @@
-name: Run Jest Tests
-
-on:
-  push:           # Corre cuando haces push
-    branches: ["main"]
-  pull_request:   # Corre cuando abres PR hacia main
-    branches: ["main"]
-
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22.18.0
+      - run: npm ci
+      - run: npx eslint . --ext .js,.jsx,.ts,.tsx
+
   test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -17,5 +18,3 @@ jobs:
           node-version: 22.18.0
       - run: npm ci
       - run: npm test
-
-

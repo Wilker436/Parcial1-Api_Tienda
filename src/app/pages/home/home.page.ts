@@ -49,6 +49,8 @@ export class HomePage implements OnInit {
       },
       error: (error: any) => {
         console.error("Error al obtener productos", error);
+
+        console.log("pepe");
       }
     });
   }
