@@ -1,9 +1,8 @@
 ## Taller Calidad de software
 ### Integrantes:
 - Wilker A. Pacheco Perez ***Codigo estudiantil:*** 2520880004
-- Juan D. Martinez Puello ***Codigo estudiantil:*** 2520880011
-- Camilo A. Pastrana Rodriguez ***Codigo estudiantil:*** 2520880036  <br> ***nota:*** Mis aportes al taller sin querer los subi desde las credenciales de una compañera a la que le presto mi portatil para que ella haga sus talleres, hice el push sin revisar las credenciales.
-
+- Karen Buelvas Rosario ***Codigo estudiantil:*** 2520880025
+-
 # 📌 Parcial 1 - programacion mobile
 
 ## 🚀 Pasos de Instalación
