@@ -9,7 +9,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./card-product.component.scss'],
   standalone: false,
 })
-export class CardProductComponent  implements OnInit {
+export class CardProductComponent   {
 
   constructor(
     private router: Router,
@@ -17,7 +17,6 @@ export class CardProductComponent  implements OnInit {
     private toastController: ToastController
   ) { }
 
-  ngOnInit() {}
 
   
   getStars(rating: number): string[] {
