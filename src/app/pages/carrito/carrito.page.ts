@@ -44,7 +44,6 @@ export class CarritoPage implements OnInit {
     const impuestos = subtotal * 0.16; 
     return subtotal + impuestos;
   }
-  
 
   enterAnimation = (baseEl: HTMLElement) => {
     const root = baseEl.shadowRoot;
