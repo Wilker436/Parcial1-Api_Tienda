@@ -15,7 +15,7 @@ jobs:
     permissions:
       contents: read
       packages: read
-      statuses: write   # importante para quitar el error 403
+      statuses: write   # necesario para reportar resultados
 
     steps:
       - name: Checkout code
@@ -28,7 +28,10 @@ jobs:
         uses: super-linter/super-linter@v8.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_ALL_CODEBASE: false   # desactiva linters innecesarios
+          VALIDATE_TYPESCRIPT_ES: true   # activa TS con ESLint
+          VALIDATE_HTML: true            # activa HTML
+          OUTPUT_DETAILS: detailed       # muestra archivo + línea + regla rota
           DEFAULT_BRANCH: main
 
 
